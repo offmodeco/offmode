@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="da" class="scroll-smooth">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Projekter — OffMode</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      darkMode: 'class',
+      theme: {
+        extend: {
+          fontFamily: {
+            mono: ['"IBM Plex Mono"', 'monospace'],
+            sans: ['"Inter"', 'sans-serif'],
+          },
+          colors: {
+            accent: '#FF5733',
+          },
+          keyframes: {
+            fadeSlideIn: {
+              '0%': { opacity: '0', transform: 'translateY(6px)' },
+              '100%': { opacity: '1', transform: 'translateY(0)' },
+            },
+          },
+          animation: {
+            'fade-in': 'fadeSlideIn 0.6s ease forwards',
+          },
+        },
+      },
+    }
+  </script>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=Newsreader:ital,opsz,wght@0,6..72,500;0,6..72,600;0,6..72,700;0,6..72,800;1,6..72,500;1,6..72,600&family=Inter:wght@300;400;500;600;700;900&display=swap"
+    rel="stylesheet" />
+
+  <style>
+    /* ── SVG grain overlay ── */
+    body::before {
+      content: '';
+      position: fixed;
+      inset: 0;
+      z-index: 0;
+      pointer-events: none;
+      opacity: 0.08;
+      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='260' height='260'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.75' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='260' height='260' filter='url(%23n)'/%3E%3C/svg%3E");
+      background-size: 260px 260px;
+    }
+
+    header, main, footer {
+      position: relative;
+      z-index: 1;
+    }
+
+    *,
+    *::before,
+    *::after {
+      transition: background-color 0.2s ease, border-color 0.2s ease, color 0.2s ease;
+    }
+
+    h1 {
+      font-family: 'Newsreader', Georgia, serif;
+      font-weight: 800;
+      font-optical-sizing: auto;
+      letter-spacing: -0.01em;
+      line-height: 1.0;
+    }
+
+    h2 {
+      font-family: 'Newsreader', Georgia, serif;
+      font-weight: 600;
+      font-optical-sizing: auto;
+      letter-spacing: -0.01em;
+      line-height: 1.08;
+      margin-bottom: 0;
+    }
+  </style>
+</head>
+
+<body class="bg-white dark:bg-[#0c0c0c] text-black dark:text-white font-sans antialiased">
+
+  <!-- ── NAV ── -->
+  <header class="px-6">
+    <div class="max-w-3xl mx-auto h-14 flex items-center justify-between">
+      <a href="index.html" class="font-mono text-sm font-semibold tracking-widest uppercase">
+        OFF<span class="text-accent">MODE</span>
+      </a>
+      <nav class="flex items-center gap-4">
+        <a href="projekter.html"
+          class="text-sm font-medium text-accent transition-colors duration-150">
+          Projekter
+        </a>
+        <a href="mailto:kim@offmode.co"
+          class="inline-block border border-black/20 dark:border-white/20 hover:border-accent hover:text-accent rounded-md px-4 py-1.5 text-sm font-medium tracking-wide transition-colors duration-150">
+          Kontakt
+        </a>
+        <button id="theme-toggle" aria-label="Skift tema"
+          class="w-8 h-8 flex items-center justify-center border border-black/20 dark:border-white/20 hover:border-accent rounded-md transition-colors duration-150">
+          <svg id="icon-sun" class="hidden dark:block w-4 h-4" fill="none" stroke="currentColor" stroke-width="2"
+            viewBox="0 0 24 24">
+            <circle cx="12" cy="12" r="4" />
+            <path
+              d="M12 2v2M12 20v2M4.22 4.22l1.42 1.42M18.36 18.36l1.42 1.42M2 12h2M20 12h2M4.22 19.78l1.42-1.42M18.36 5.64l1.42-1.42" />
+          </svg>
+          <svg id="icon-moon" class="block dark:hidden w-4 h-4" fill="none" stroke="currentColor" stroke-width="2"
+            viewBox="0 0 24 24">
+            <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z" />
+          </svg>
+        </button>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+
+    <section class="px-6 pt-16 pb-24">
+      <div class="max-w-3xl mx-auto">
+
+        <div class="max-w-2xl mb-6 opacity-0 animate-fade-in">
+          <h1 class="text-4xl sm:text-5xl">Projekter</h1>
+        </div>
+
+        <div class="divide-y divide-black/10 dark:divide-white/10 opacity-0 animate-fade-in">
+
+          <article class="py-10 grid grid-cols-1 sm:grid-cols-12 gap-6 items-start">
+            <div class="sm:col-span-1">
+              <span class="font-mono text-xs text-black/30 dark:text-white/30">01</span>
+            </div>
+            <div class="sm:col-span-9">
+              <h2 class="text-2xl sm:text-3xl mb-2">Annoncer til Gul og Gratis</h2>
+              <a href="https://github.com/offmodeco/gog-feed" target="_blank" rel="noopener"
+                class="font-mono text-xs text-black/35 dark:text-white/30 hover:text-accent transition-colors duration-150 block mb-6">
+                GitHub
+              </a>
+              <p class="text-base text-black/60 dark:text-white/50 font-medium leading-relaxed max-w-xl mb-6">
+                Efter at have fået en helt ny hjemmeside i Framer, manglede en campingforhandler i Midt og Vestjylland muligheden for automatisk at få oprettet annoncer til alle deres campingvogne ved Gul og Gratis. På bare en uge fik vi udviklet og testet et system til netop dette, så de ikke længere skulle tænke på manuelt at oprette annoncerne. Helt uden vedligehold eller ekstra månedlige omkostninger.
+              </p>
+              <div class="flex flex-wrap gap-2">
+                <span class="font-mono text-xs text-black/40 dark:text-white/35 border border-black/15 dark:border-white/15 rounded px-2 py-1">Python</span>
+                <span class="font-mono text-xs text-black/40 dark:text-white/35 border border-black/15 dark:border-white/15 rounded px-2 py-1">Playwright</span>
+                <span class="font-mono text-xs text-black/40 dark:text-white/35 border border-black/15 dark:border-white/15 rounded px-2 py-1">Framer CMS</span>
+                <span class="font-mono text-xs text-black/40 dark:text-white/35 border border-black/15 dark:border-white/15 rounded px-2 py-1">Gul og Gratis API</span>
+              </div>
+            </div>
+          </article>
+
+        </div>
+
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ── FOOTER ── -->
+  <footer class="pt-12 pb-12 px-6">
+    <div class="max-w-3xl mx-auto flex flex-col gap-8">
+
+      <div class="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-6">
+        <a href="mailto:kim@offmode.co" class="text-sm font-medium hover:text-accent transition-colors duration-150">
+          kim@offmode.co
+        </a>
+        <p class="font-mono text-xs text-black/20 dark:text-white/20">
+          © 2026 OffMode
+        </p>
+      </div>
+
+      <div class="border-t border-black/5 dark:border-white/5 pt-6 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-3">
+        <p class="font-mono text-xs text-black/25 dark:text-white/20">
+          Kim Pedersen &nbsp;·&nbsp; Ørnevej 31, 7600 Struer &nbsp;·&nbsp; CVR 41929820
+        </p>
+        <button onclick="document.getElementById('privacy-modal').classList.remove('hidden')"
+          class="font-mono text-xs text-black/25 dark:text-white/20 hover:text-accent transition-colors duration-150 cursor-pointer">
+          Cookie- og privatlivspolitik
+        </button>
+      </div>
+
+    </div>
+  </footer>
+
+  <!-- ── PRIVACY MODAL ── -->
+  <div id="privacy-modal" class="hidden fixed inset-0 z-50 flex items-end sm:items-center justify-center p-4 sm:p-8"
+    onclick="if(event.target===this)this.classList.add('hidden')">
+    <div class="absolute inset-0 bg-black/40 dark:bg-black/60"></div>
+    <div class="relative bg-white dark:bg-[#0f0f0f] border border-black/10 dark:border-white/10 w-full max-w-xl max-h-[80vh] overflow-y-auto p-8">
+      <div class="flex items-start justify-between mb-8">
+        <h2 class="font-sans font-semibold text-lg tracking-tight">Cookie- og privatlivspolitik</h2>
+        <button onclick="document.getElementById('privacy-modal').classList.add('hidden')"
+          class="font-mono text-xs text-black/30 dark:text-white/30 hover:text-accent transition-colors duration-150 ml-6 shrink-0">
+          Luk ✕
+        </button>
+      </div>
+      <div class="space-y-6 text-sm font-normal leading-relaxed text-black/70 dark:text-white/60">
+        <div>
+          <h3 class="font-sans font-medium text-black dark:text-white mb-2">Cookies</h3>
+          <p>Dette site bruger ingen tracking-cookies og ingen tredjepartscookies. Den eneste cookie der kan blive sat, er en teknisk nødvendig cookie til at huske dit valg af lyst eller mørkt tema. Den gemmes lokalt i din browser og sendes ikke til nogen server.</p>
+        </div>
+        <div>
+          <h3 class="font-sans font-medium text-black dark:text-white mb-2">Tracking og analyse</h3>
+          <p>Der indsamles ingen data om dine besøg. Der er ingen analyseredskaber, ingen pixels og ingen adfærdssporing på dette site.</p>
+        </div>
+        <div>
+          <h3 class="font-sans font-medium text-black dark:text-white mb-2">Kontakthenvendelser</h3>
+          <p>Hvis du skriver til mig på kim@offmode.co, bruger jeg din e-mailadresse udelukkende til at besvare din henvendelse. Den deles ikke med tredjeparter.</p>
+        </div>
+        <div>
+          <h3 class="font-sans font-medium text-black dark:text-white mb-2">Dataansvarlig</h3>
+          <p>Kim Pedersen<br>Ørnevej 31, 7600 Struer<br>CVR 41929820<br>kim@offmode.co</p>
+        </div>
+        <p class="font-mono text-xs text-black/30 dark:text-white/30 pt-2">Sidst opdateret: maj 2026</p>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    /* Dark mode */
+    const toggle = document.getElementById('theme-toggle');
+    const html = document.documentElement;
+    if (localStorage.theme === 'dark' || (!('theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+      html.classList.add('dark');
+    }
+    toggle.addEventListener('click', () => {
+      const isDark = html.classList.toggle('dark');
+      localStorage.theme = isDark ? 'dark' : 'light';
+    });
+  </script>
+
+</body>
+
+</html>

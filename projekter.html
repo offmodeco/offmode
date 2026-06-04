@@ -119,33 +119,68 @@
     <section class="px-6 pt-16 pb-24">
       <div class="max-w-3xl mx-auto">
 
-        <div class="max-w-2xl mb-6 opacity-0 animate-fade-in">
-          <h1 class="text-4xl sm:text-5xl">Projekter</h1>
+        <div class="max-w-2xl mb-10 opacity-0 animate-fade-in">
+          <h1 class="text-4xl sm:text-5xl mb-5">Projekter</h1>
+          <p class="text-base font-medium text-black/60 dark:text-white/50 leading-relaxed">
+            OffMode er specialiseret i automatisering. Jeg påtager mig også udvalgte hjemmesideprojekter.
+          </p>
         </div>
 
-        <div class="divide-y divide-black/10 dark:divide-white/10 opacity-0 animate-fade-in">
+        <!-- ── Faner ── -->
+        <div class="opacity-0 animate-fade-in">
+          <div class="flex gap-6 border-b border-black/10 dark:border-white/10 mb-0">
+            <button id="tab-auto" onclick="switchTab('automatisering')"
+              class="tab-btn pb-3 text-sm font-medium tracking-wide border-b-2 border-black dark:border-white -mb-px transition-colors duration-150">
+              Automatisering
+            </button>
+            <button id="tab-ovrigt" onclick="switchTab('ovrigt')"
+              class="tab-btn pb-3 text-sm font-medium tracking-wide border-b-2 border-transparent text-black/40 dark:text-white/35 hover:text-black dark:hover:text-white -mb-px transition-colors duration-150">
+              Øvrigt arbejde
+            </button>
+          </div>
 
-          <article class="py-10 grid grid-cols-1 sm:grid-cols-12 gap-6 items-start">
-            <div class="sm:col-span-1">
-              <span class="font-mono text-xs text-black/30 dark:text-white/30">01</span>
-            </div>
-            <div class="sm:col-span-9">
-              <h2 class="text-2xl sm:text-3xl mb-2">Annoncer til Gul og Gratis</h2>
-              <a href="https://github.com/offmodeco/gog-feed" target="_blank" rel="noopener"
-                class="font-mono text-xs text-black/35 dark:text-white/30 hover:text-accent transition-colors duration-150 block mb-6">
-                GitHub
-              </a>
-              <p class="text-base text-black/60 dark:text-white/50 font-medium leading-relaxed max-w-xl mb-6">
-                Efter at have fået en helt ny hjemmeside i Framer, manglede en campingforhandler i Midt og Vestjylland muligheden for automatisk at få oprettet annoncer til alle deres campingvogne ved Gul og Gratis. På bare en uge fik vi udviklet og testet et system til netop dette, så de ikke længere skulle tænke på manuelt at oprette annoncerne. Helt uden vedligehold eller ekstra månedlige omkostninger.
-              </p>
-              <div class="flex flex-wrap gap-2">
-                <span class="font-mono text-xs text-black/40 dark:text-white/35 border border-black/15 dark:border-white/15 rounded px-2 py-1">Python</span>
-                <span class="font-mono text-xs text-black/40 dark:text-white/35 border border-black/15 dark:border-white/15 rounded px-2 py-1">Playwright</span>
-                <span class="font-mono text-xs text-black/40 dark:text-white/35 border border-black/15 dark:border-white/15 rounded px-2 py-1">Framer CMS</span>
-                <span class="font-mono text-xs text-black/40 dark:text-white/35 border border-black/15 dark:border-white/15 rounded px-2 py-1">Gul og Gratis API</span>
+          <!-- Fane 1: Automatisering -->
+          <div id="panel-automatisering" class="divide-y divide-black/10 dark:divide-white/10">
+            <article class="py-10 grid grid-cols-1 sm:grid-cols-12 gap-6 items-start">
+              <div class="sm:col-span-1">
+                <span class="font-mono text-xs text-black/30 dark:text-white/30">01</span>
               </div>
-            </div>
-          </article>
+              <div class="sm:col-span-9">
+                <h2 class="text-2xl sm:text-3xl mb-2">Annoncer til Gul og Gratis</h2>
+                <a href="https://github.com/offmodeco/gog-feed" target="_blank" rel="noopener"
+                  class="font-mono text-xs text-black/35 dark:text-white/30 hover:text-accent transition-colors duration-150 block mb-6">
+                  GitHub
+                </a>
+                <p class="text-base text-black/60 dark:text-white/50 font-medium leading-relaxed max-w-xl mb-6">
+                  Efter at have fået en helt ny hjemmeside i Framer, manglede en campingforhandler i Midt og Vestjylland muligheden for automatisk at få oprettet annoncer til alle deres campingvogne ved Gul og Gratis. På bare en uge fik vi udviklet og testet et system til netop dette, så de ikke længere skulle tænke på manuelt at oprette annoncerne. Helt uden vedligehold eller ekstra månedlige omkostninger.
+                </p>
+                <div class="flex flex-wrap gap-2">
+                  <span class="font-mono text-xs text-black/40 dark:text-white/35 border border-black/15 dark:border-white/15 rounded px-2 py-1">Python</span>
+                  <span class="font-mono text-xs text-black/40 dark:text-white/35 border border-black/15 dark:border-white/15 rounded px-2 py-1">Playwright</span>
+                  <span class="font-mono text-xs text-black/40 dark:text-white/35 border border-black/15 dark:border-white/15 rounded px-2 py-1">Framer CMS</span>
+                  <span class="font-mono text-xs text-black/40 dark:text-white/35 border border-black/15 dark:border-white/15 rounded px-2 py-1">Gul og Gratis API</span>
+                </div>
+              </div>
+            </article>
+          </div>
+
+          <!-- Fane 2: Øvrigt arbejde -->
+          <div id="panel-ovrigt" class="hidden divide-y divide-black/10 dark:divide-white/10">
+            <article class="py-10 grid grid-cols-1 sm:grid-cols-12 gap-6 items-start">
+              <div class="sm:col-span-1">
+                <span class="font-mono text-xs text-black/30 dark:text-white/30">01</span>
+              </div>
+              <div class="sm:col-span-9">
+                <h2 class="text-2xl sm:text-3xl mb-2">Ny hjemmeside til Viborg Caravan Center</h2>
+                <p class="text-base text-black/60 dark:text-white/50 font-medium leading-relaxed max-w-xl mb-6">
+                  <!-- Beskrivelse tilføjes senere -->
+                </p>
+                <div class="flex flex-wrap gap-2">
+                  <!-- Tags tilføjes senere -->
+                </div>
+              </div>
+            </article>
+          </div>
 
         </div>
 
@@ -225,6 +260,26 @@
       const isDark = html.classList.toggle('dark');
       localStorage.theme = isDark ? 'dark' : 'light';
     });
+
+    /* Tabs */
+    function switchTab(tab) {
+      const panels = { automatisering: 'panel-automatisering', ovrigt: 'panel-ovrigt' };
+      const btns   = { automatisering: 'tab-auto',            ovrigt: 'tab-ovrigt' };
+
+      Object.keys(panels).forEach(key => {
+        const panel = document.getElementById(panels[key]);
+        const btn   = document.getElementById(btns[key]);
+        if (key === tab) {
+          panel.classList.remove('hidden');
+          btn.classList.add('border-black', 'dark:border-white');
+          btn.classList.remove('border-transparent', 'text-black/40', 'dark:text-white/35');
+        } else {
+          panel.classList.add('hidden');
+          btn.classList.remove('border-black', 'dark:border-white');
+          btn.classList.add('border-transparent', 'text-black/40', 'dark:text-white/35');
+        }
+      });
+    }
   </script>
 
 </body>

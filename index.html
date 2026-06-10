@@ -15,9 +15,6 @@
             mono: ['"IBM Plex Mono"', 'monospace'],
             sans: ['"Inter"', 'sans-serif'],
           },
-          colors: {
-            accent: '#FF5733',
-          },
           keyframes: {
             blink: {
               '0%, 100%': { opacity: '1' },
@@ -47,7 +44,7 @@
   <link
     href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=Inter:wght@300;400;500;600;700;900&display=swap"
     rel="stylesheet" />
-  <link href="https://api.fontshare.com/v2/css?f[]=sentient@300,400,500,700&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Geist:wght@300;400;500;700&display=swap" rel="stylesheet" />
 
   <style>
     /* ── SVG grain overlay ── */
@@ -103,29 +100,19 @@
 
     /* ── Headlines ── */
     h1 {
-      font-family: 'Sentient', Georgia, serif;
-      font-weight: 300;
+      font-family: 'Geist', Georgia, serif;
+      font-weight: 400;
       letter-spacing: -0.01em;
       line-height: 1.0;
     }
 
     h2 {
-      font-family: 'Sentient', Georgia, serif;
-      font-weight: 400;
+      font-family: 'Geist', Georgia, serif;
+      font-weight: 500;
       letter-spacing: -0.01em;
       line-height: 1.08;
       margin-bottom: 0;
     }
-
-    /* ── Font scale ──
-       xs:   0.75rem  / 12px  — labels, mono tags
-       sm:   0.875rem / 14px  — nav, captions, footer
-       base: 1rem     / 16px  — body / h3
-       lg:   1.125rem / 18px  — lead text
-       3xl:  1.875rem / 30px  — h2 mobile
-       4xl:  2.25rem  / 36px  — h1 mobile
-       5xl:  3rem     / 48px  — h1 desktop
-    ── */
   </style>
 </head>
 
@@ -135,19 +122,11 @@
   <header class="px-6">
     <div class="max-w-3xl mx-auto h-14 flex items-center justify-between">
       <a href="#" class="font-mono text-sm font-semibold tracking-widest uppercase">
-        OFF<span class="text-accent">MODE</span>
+        OFFMODE
       </a>
       <nav class="flex items-center gap-4">
-        <a href="projekter.html"
-          class="text-sm font-medium hover:text-accent transition-colors duration-150">
-          Projekter
-        </a>
-        <a href="mailto:kim@offmode.co"
-          class="inline-block border border-black/20 dark:border-white/20 hover:border-accent hover:text-accent rounded-md px-4 py-1.5 text-sm font-medium tracking-wide transition-colors duration-150">
-          Kontakt
-        </a>
         <button id="theme-toggle" aria-label="Skift tema"
-          class="w-8 h-8 flex items-center justify-center border border-black/20 dark:border-white/20 hover:border-accent rounded-md transition-colors duration-150">
+          class="w-8 h-8 flex items-center justify-center border border-black/20 dark:border-white/20 hover:border-black dark:hover:border-white rounded-md transition-colors duration-150">
           <svg id="icon-sun" class="hidden dark:block w-4 h-4" fill="none" stroke="currentColor" stroke-width="2"
             viewBox="0 0 24 24">
             <circle cx="12" cy="12" r="4" />
@@ -166,123 +145,66 @@
   <main>
 
     <!-- ── HERO ── -->
-    <section class="min-h-screen flex flex-col justify-center px-6">
-      <div class="max-w-3xl mx-auto w-full pt-12 pb-16">
+    <section class="pt-24 pb-16 px-6">
+      <div class="max-w-3xl mx-auto w-full">
 
-        <div class="opacity-0 animate-fade-in">
+        <div class="opacity-0 animate-fade-in text-center">
           <h1 class="text-4xl sm:text-5xl">
             Brug din tid rigtigt
           </h1>
-          <p class="mt-5 text-base font-medium text-black/60 dark:text-white/50 leading-relaxed" style="max-width: 55ch;">
-            Jeg hjælper travle virksomhedsejere med at automatisere manuelle processer, så de kan fokusere på de opgaver der gør en forskel.
+          <p class="mt-5 text-base font-medium text-black/60 dark:text-white/50 leading-relaxed mx-auto" style="max-width: 55ch;">
+            Jeg hjælper lokale virksomheder med at bygge digitale løsninger der fjerner spildtid, så de kan fokusere på det der faktisk gør en forskel.
           </p>
-          <div class="mt-10 flex flex-wrap items-center gap-8">
-            <a href="#projects"
-              class="inline-block bg-accent text-white border border-accent/60 rounded-md px-5 py-2.5 text-sm font-semibold tracking-widest uppercase hover:opacity-90 transition-opacity duration-200">
-              Se eksempler
+          <div class="mt-10 flex flex-wrap items-center justify-center gap-8">
+            <a href="#contact"
+              class="inline-block bg-black dark:bg-white text-white dark:text-black rounded-md px-5 py-2.5 text-sm font-semibold tracking-widest uppercase hover:opacity-75 transition-opacity duration-200">
+              Start i dag
             </a>
-            <a href="#about"
-              class="text-sm font-medium text-black/50 dark:text-white/40 hover:text-black dark:hover:text-white transition-colors duration-150">
-              Læs om OffMode →
-            </a>
-          </div>
-        </div>
-
-        <!-- Terminal -->
-        <div class="mt-16 opacity-0 animate-fade-in-delay" style="font-size: 0.9375rem;">
-          <div class="relative overflow-hidden bg-[#1a1a1a] border border-white/12 rounded-lg p-8 font-mono"
-            style="box-shadow: inset 0 1px 0 rgba(255,255,255,0.07), inset 0 2px 20px rgba(0,0,0,0.5);">
-            <div class="flex items-center gap-2 mb-6 pb-5 border-b border-white/8">
-              <span class="w-3 h-3 rounded-full bg-[#FF5F57]"></span>
-              <span class="w-3 h-3 rounded-full bg-[#FFBD2E]"></span>
-              <span class="w-3 h-3 rounded-full bg-[#28CA41]"></span>
-              <span class="ml-2 text-white/25 text-xs tracking-widest">agent-status.sh</span>
-            </div>
-            <div class="space-y-2.5 text-sm leading-relaxed">
-              <p class="terminal-line text-white/35">$ ./monitor --agent offmode-core</p>
-              <p class="terminal-line">
-                <span class="text-accent font-medium">▶ KØRER</span>
-                <span class="text-white/45"> agent:offmode-core</span>
-              </p>
-              <p class="terminal-line text-white/45">oppetid <span class="text-white">47d 12h 03m</span></p>
-              <p class="terminal-line text-white/45">opgaver_fuldført <span class="text-white">1.204</span></p>
-              <p class="terminal-line text-white/45">sidste_kørsel <span class="text-white">2026-05-08T09:41:22Z</span></p>
-              <p class="terminal-line text-white/45">næste_kørsel <span class="text-white">om 18 minutter</span></p>
-              <p class="terminal-line flex items-center gap-2 mt-4 pt-3 border-t border-white/8">
-                <span class="inline-block w-2 h-2 rounded-full bg-accent animate-pulse-dot shrink-0"></span>
-                <span id="typewriter" class="text-white/70"
-                  style="display:inline-block; min-width:1px; min-height:1.5em;">&nbsp;</span>
-              </p>
-            </div>
           </div>
         </div>
 
       </div>
-      <div class="max-w-3xl mx-auto w-full border-t border-black/8 dark:border-white/8"></div>
     </section>
 
-    <!-- ── CASES ── -->
+    <!-- ── PROJECTS ── -->
     <section id="projects" class="pt-10 pb-16 px-6">
-      <div class="max-w-3xl mx-auto">
-
-        <div class="max-w-2xl mb-6">
-          <h2 class="text-3xl sm:text-4xl">Sådan ser det ud i praksis</h2>
-        </div>
+      <div class="max-w-xl mx-auto">
 
         <div class="divide-y divide-black/10 dark:divide-white/10">
 
-          <article class="group py-8 grid grid-cols-1 sm:grid-cols-12 gap-6 items-start -mx-6 px-6">
-            <div class="sm:col-span-1">
-              <span class="font-mono text-xs text-black/30 dark:text-white/30">01</span>
-            </div>
-            <div class="sm:col-span-9">
-              <h3 class="font-sans font-semibold text-base tracking-tight mb-3">
-                Tilbud der skriver sig selv
-              </h3>
-              <p class="text-base text-black/60 dark:text-white/50 font-medium leading-relaxed max-w-xl">
-                Du modtager en henvendelse fra en kunde. I stedet for at formulere tilbuddet fra bunden, ligger der allerede et udkast klar, baseret på din egen prisliste, som du kun skal læse igennem og sende.
-              </p>
-            </div>
-          </article>
-
-          <article class="group py-8 grid grid-cols-1 sm:grid-cols-12 gap-6 items-start -mx-6 px-6">
-            <div class="sm:col-span-1">
-              <span class="font-mono text-xs text-black/30 dark:text-white/30">02</span>
-            </div>
-            <div class="sm:col-span-9">
-              <h3 class="font-sans font-semibold text-base tracking-tight mb-3">
-                Dokumenter der selv finder hjem
-              </h3>
-              <p class="text-base text-black/60 dark:text-white/50 font-medium leading-relaxed max-w-xl">
-                Faktura, kontrakt eller HR-papir lander i din indbakke. I stedet for at flytte den manuelt, vente på godkendelse og flytte den igen, kører agenten hele arbejdsgangen fra modtagelse til godkendelse til arkivering.
-              </p>
-            </div>
-          </article>
-
-        </div>
-      </div>
-    </section>
-
-    <!-- ── PRICING ── -->
-    <section id="manifesto" class="py-24 px-6 bg-[#f7f7f5] dark:bg-[#141414]">
-      <div class="max-w-3xl mx-auto">
-
-        <div class="max-w-2xl mb-6">
-          <h2 class="text-3xl sm:text-4xl">Sådan kommer vi i gang</h2>
-        </div>
-
-        <div class="max-w-2xl">
-          <div class="border-t border-black/10 dark:border-white/10 pt-8">
-            <div class="flex items-baseline justify-between mb-4">
-              <h3 class="font-sans font-semibold text-base tracking-tight">Startforløb, en uge, fast pris</h3>
-              <span class="font-mono text-sm text-accent">9.900 kr.</span>
-            </div>
-            <p class="text-base text-black/60 dark:text-white/50 font-medium leading-relaxed">
-              Vi udvælger en konkret arbejdsgang i din virksomhed, og på bare en uge bygger jeg den som en kørende automatisering i dit eget miljø. Du ejer løsningen fuldt ud, ved præcis hvad den gør og hvad den koster.
+          <article class="py-8">
+            <h3 class="font-sans font-semibold text-base tracking-tight mb-2">Automatisk annoncering</h3>
+            <a href="https://github.com/offmodeco/gog-feed" target="_blank" rel="noopener"
+              class="font-mono text-xs text-black/35 dark:text-white/30 hover:text-black dark:hover:text-white transition-colors duration-150 block mb-4">
+              GitHub
+            </a>
+            <p class="text-base text-black/60 dark:text-white/50 font-medium leading-relaxed mb-4">
+              På en uge byggede og testede jeg et system, der automatisk opretter annoncer på salgsplatformen Gul og Gratis, uden vedligehold og uden månedlige omkostninger.
             </p>
-          </div>
-        </div>
+            <div class="flex flex-wrap gap-2">
+              <span class="font-mono text-xs text-black/40 dark:text-white/35 border border-black/15 dark:border-white/15 rounded px-2 py-1">Python</span>
+              <span class="font-mono text-xs text-black/40 dark:text-white/35 border border-black/15 dark:border-white/15 rounded px-2 py-1">Playwright</span>
+              <span class="font-mono text-xs text-black/40 dark:text-white/35 border border-black/15 dark:border-white/15 rounded px-2 py-1">Framer CMS</span>
+              <span class="font-mono text-xs text-black/40 dark:text-white/35 border border-black/15 dark:border-white/15 rounded px-2 py-1">Gul og Gratis API</span>
+            </div>
+          </article>
 
+          <article class="py-8">
+            <h3 class="font-sans font-semibold text-base tracking-tight mb-2">Ny hjemmeside til Viborg Caravan Center</h3>
+            <a href="https://viborg-caravancenter.dk/" target="_blank" rel="noopener"
+              class="font-mono text-xs text-black/35 dark:text-white/30 hover:text-black dark:hover:text-white transition-colors duration-150 block mb-4">
+              viborg-caravancenter.dk
+            </a>
+            <p class="text-base text-black/60 dark:text-white/50 font-medium leading-relaxed mb-4">
+              Design og udvikling af en ny hjemmeside i Framer som afløser for virksomhedens tidligere side. Fokus på et opdateret visuelt udtryk, en klar struktur og en moderne teknisk platform der er nem at vedligeholde.
+            </p>
+            <div class="flex flex-wrap gap-2">
+              <span class="font-mono text-xs text-black/40 dark:text-white/35 border border-black/15 dark:border-white/15 rounded px-2 py-1">Framer</span>
+              <span class="font-mono text-xs text-black/40 dark:text-white/35 border border-black/15 dark:border-white/15 rounded px-2 py-1">Framer CMS</span>
+            </div>
+          </article>
+
+        </div>
       </div>
     </section>
 
@@ -290,31 +212,35 @@
     <section id="about" class="pt-24 pb-24 px-6">
       <div class="max-w-3xl mx-auto">
 
-        <div class="max-w-2xl mb-6">
+        <div class="mb-6 text-center">
           <h2 class="text-3xl sm:text-4xl">Om OffMode</h2>
         </div>
 
-        <div class="max-w-2xl space-y-5 text-black/65 dark:text-white/55 font-medium leading-relaxed text-base">
+        <div class="space-y-5 text-black/65 dark:text-white/55 font-medium leading-relaxed text-base text-center mx-auto" style="max-width: 55ch;">
           <p>
-            OffMode er bygget på en simpel idé: AI-agenter kan håndtere en stor del af det manuelle og trivielle arbejde i hverdagen, det arbejde der spiser tid, men ikke flytter virksomheden fremad.
+            Jeg hedder Kim og har arbejdet med IT i danske virksomheder i 15 år,<br>lige fra tekniske systemer til administration og databehandling.
           </p>
           <p>
-            Det handler ikke om at mennesker ikke skal arbejde. Det handler om at frigøre tid til det arbejde der faktisk gør en forskel.
+            I dag arbejder jeg med digitale projekter på tværs af AI, automatisering og webudvikling.
           </p>
           <p>
-            Jeg har 15 års erfaring med IT i forskellige danske virksomheder, og har arbejdet med både dybt tekniske systemer, såvel som administration og databehandling. Det betyder at de løsninger jeg bygger ikke bare automatiserer, de opfylder også gældende krav og retningslinjer.
+            Ingen abonnementer. Ingen binding. Kun løsninger der virker.
           </p>
-          <div class="pt-4 border-t border-black/8 dark:border-white/8">
-            <p class="text-base text-black/60 dark:text-white/50 font-medium mb-6">
-              Book 20 minutter. Du fortæller hvordan du bruger din tid, og jeg viser dig konkret hvilken arbejdsgang i din virksomhed der er nemmest at automatisere først.
-            </p>
-            <a href="mailto:kim@offmode.co"
-              class="inline-block bg-accent text-white border border-accent/50 rounded-md px-5 py-2.5 text-sm font-semibold tracking-widest uppercase hover:opacity-90 transition-opacity duration-200">
-              Book 20 minutter
-            </a>
-          </div>
         </div>
 
+      </div>
+    </section>
+
+    <!-- ── CONTACT ── -->
+    <section id="contact" class="py-24 px-6">
+      <div class="max-w-3xl mx-auto text-center">
+        <h2 class="text-3xl sm:text-4xl mb-10">Har du et projekt eller en idé?</h2>
+        <div>
+          <a href="mailto:kim@offmode.co"
+            class="inline-block bg-black dark:bg-white text-white dark:text-black rounded-md px-5 py-2.5 text-sm font-semibold tracking-widest uppercase hover:opacity-75 transition-opacity duration-200">
+            Book 20 minutter
+          </a>
+        </div>
       </div>
     </section>
 
@@ -324,22 +250,22 @@
   <footer class="pt-24 pb-12 px-6">
     <div class="max-w-3xl mx-auto flex flex-col gap-8">
 
-      <div class="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-6">
-        <a href="mailto:kim@offmode.co" class="text-sm font-medium hover:text-accent transition-colors duration-150">
+      <div class="flex flex-col items-center gap-3 text-center">
+        <a href="mailto:kim@offmode.co" class="text-sm font-medium hover:text-black dark:hover:text-white transition-colors duration-150">
           kim@offmode.co
         </a>
-<p class="font-mono text-xs text-black/20 dark:text-white/20">
+        <p class="font-mono text-xs text-black/20 dark:text-white/20">
           © 2026 OffMode
         </p>
       </div>
 
       <div
-        class="border-t border-black/5 dark:border-white/5 pt-6 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-3">
+        class="border-t border-black/5 dark:border-white/5 pt-6 flex flex-col items-center gap-3 text-center">
         <p class="font-mono text-xs text-black/25 dark:text-white/20">
           Kim Pedersen &nbsp;·&nbsp; Ørnevej 31, 7600 Struer &nbsp;·&nbsp; CVR 41929820
         </p>
         <button onclick="document.getElementById('privacy-modal').classList.remove('hidden')"
-          class="font-mono text-xs text-black/25 dark:text-white/20 hover:text-accent transition-colors duration-150 cursor-pointer">
+          class="font-mono text-xs text-black/25 dark:text-white/20 hover:text-black dark:hover:text-white transition-colors duration-150 cursor-pointer">
           Cookie- og privatlivspolitik
         </button>
       </div>
@@ -356,7 +282,7 @@
       <div class="flex items-start justify-between mb-8">
         <h2 class="font-sans font-semibold text-lg tracking-tight">Cookie- og privatlivspolitik</h2>
         <button onclick="document.getElementById('privacy-modal').classList.add('hidden')"
-          class="font-mono text-xs text-black/30 dark:text-white/30 hover:text-accent transition-colors duration-150 ml-6 shrink-0">
+          class="font-mono text-xs text-black/30 dark:text-white/30 hover:text-black dark:hover:text-white transition-colors duration-150 ml-6 shrink-0">
           Luk ✕
         </button>
       </div>

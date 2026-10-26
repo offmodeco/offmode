@@ -64,4 +64,4 @@
   .legal .meta { color: color-mix(in srgb, var(--fg) 60%, transparent); }
   .legal ul { margin: 0 0 1rem; padding-left: 1.2rem; }
   .legal li { margin: 0 0 0.35rem; }
-  .legal a { color: var(--fg); text-underline-offset: 3px; }
+  .legal p a { color: var(--fg); text-underline-offset: 3px; }

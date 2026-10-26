@@ -8,64 +8,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet">
-<style>
-  :root { --bg: #fff; --fg: #000; }
-  @media (prefers-color-scheme: dark) {
-    :root { --bg: #000; --fg: #fff; }
-  }
-  * { box-sizing: border-box; }
-  html { font-size: 16px; }
-  body {
-    margin: 0;
-    min-height: 100vh;
-    display: flex;
-    justify-content: center;
-    align-items: flex-start;
-    background: var(--bg);
-    color: var(--fg);
-    font-family: Inter, ui-sans-serif, system-ui, -apple-system, "Helvetica Neue", Arial, sans-serif;
-    line-height: 1.5;
-    -webkit-font-smoothing: antialiased;
-  }
-  main {
-    width: 100%;
-    max-width: 500px;
-    min-height: 100vh;
-    display: flex;
-    flex-direction: column;
-    padding: 12vh 1.5rem 2rem;
-    text-align: left;
-  }
-  u { text-underline-offset: 3px; }
-  h1 { font-size: 1.1rem; font-weight: 600; margin: 0 0 1.5rem; }
-  p { margin: 0 0 1.5rem; }
-  p:last-of-type { margin-bottom: 3rem; }
-  a.cta {
-    align-self: flex-start;
-    background: var(--fg);
-    color: var(--bg);
-    text-decoration: none;
-    padding: 0.45rem 1rem;
-    border-radius: 22px;
-  }
-  a.cta:hover, a.cta:focus-visible { opacity: 0.8; }
-  h2 { font-size: 1.1rem; font-weight: 600; margin: 0 0 1rem; }
-  ul { list-style: none; margin: 0; padding: 0; }
-  li { border-bottom: 1px solid color-mix(in srgb, var(--fg) 15%, transparent); }
-  li a {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 0.9rem 0;
-    color: color-mix(in srgb, var(--fg) 60%, transparent);
-    text-decoration: none;
-  }
-  li a:hover, li a:focus-visible { color: var(--fg); }
-  li svg { width: 1rem; height: 1rem; fill: none; stroke: currentColor; stroke-width: 1.5; stroke-linecap: round; stroke-linejoin: round; }
-  section { margin-top: 4rem; }
-  footer { margin-top: auto; padding-top: 6rem; font-size: 0.72rem; line-height: 1.7; color: color-mix(in srgb, var(--fg) 50%, transparent); }
-  footer p { margin: 0 0 0.75rem; }
-</style>
+<link rel="stylesheet" href="style.css">
 </head>
 <body>
 <main>
@@ -75,14 +18,14 @@
   <a class="cta" href="mailto:kim@offmode.co?subject=Uforpligtende%20m%C3%B8de">Frigør din tid</a>
   <section>
     <h2>Projekter</h2>
-    <ul>
+    <ul class="projects">
       <li><a href="https://byensentreprenor.dk"><span>Fra opstart til online på bare tre uger</span><svg viewBox="0 0 16 16" aria-hidden="true"><path d="M5 11l6-6M5.5 5H11v5.5"/></svg></a></li>
       <li><a href="https://github.com/offmodeco/gog-feed"><span>Automatisk annoncering</span><svg viewBox="0 0 16 16" aria-hidden="true"><path d="M5 11l6-6M5.5 5H11v5.5"/></svg></a></li>
       <li><a href="https://viborg-caravancenter.dk"><span>Ny professionel hjemmeside</span><svg viewBox="0 0 16 16" aria-hidden="true"><path d="M5 11l6-6M5.5 5H11v5.5"/></svg></a></li>
     </ul>
   </section>
   <footer>
-    <p>Cookies og privatliv</p>
+    <p><a href="privatliv/">Cookies og privatliv</a></p>
     <p>OffMode · CVR 41929820 · Gimsinghøje 25, 7600 Struer</p>
   </footer>
 </main>

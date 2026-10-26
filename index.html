@@ -48,9 +48,18 @@
   a.cta:hover, a.cta:focus-visible { opacity: 0.8; }
   h2 { font-size: 1.1rem; font-weight: 600; margin: 0 0 1rem; }
   ul { list-style: none; margin: 0; padding: 0; }
-  li { margin: 0 0 0.5rem; }
-  li a { color: var(--fg); text-decoration: none; border-bottom: 1px solid currentColor; }
-  li a:hover, li a:focus-visible { border-bottom-color: transparent; }
+  li { border-bottom: 1px solid color-mix(in srgb, var(--fg) 15%, transparent); }
+  li:first-child { border-top: 1px solid color-mix(in srgb, var(--fg) 15%, transparent); }
+  li a {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0.9rem 0;
+    color: color-mix(in srgb, var(--fg) 60%, transparent);
+    text-decoration: none;
+  }
+  li a:hover, li a:focus-visible { color: var(--fg); }
+  li svg { width: 1rem; height: 1rem; fill: none; stroke: currentColor; stroke-width: 1.5; stroke-linecap: round; stroke-linejoin: round; }
   section { margin-top: 4rem; }
 </style>
 </head>
@@ -63,8 +72,8 @@
   <section>
     <h2>Projekter</h2>
     <ul>
-      <li><a href="https://viborg-caravancenter.dk">viborg-caravancenter.dk</a></li>
-      <li><a href="https://byensentreprenor.dk">byensentreprenor.dk</a></li>
+      <li><a href="https://viborg-caravancenter.dk"><span>viborg-caravancenter.dk</span><svg viewBox="0 0 16 16" aria-hidden="true"><path d="M5 11l6-6M5.5 5H11v5.5"/></svg></a></li>
+      <li><a href="https://byensentreprenor.dk"><span>byensentreprenor.dk</span><svg viewBox="0 0 16 16" aria-hidden="true"><path d="M5 11l6-6M5.5 5H11v5.5"/></svg></a></li>
     </ul>
   </section>
 </main>
